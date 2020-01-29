@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+
+    public float speed;
+    public float verticalInput;
+    public float horizontalInput;
+    public float turnSpeed;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,13 +21,15 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.forward * speed* Time.deltaTime* verticalInput);
+        // (x,y,z)
 
-        transform.Translate(0, 0, 0.1f);
-                            // (x,y,z)
-
+        transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime * horizontalInput);
     }
 
-    private void OnCollisionEnter(Collision other)
+   private void OnCollisionEnter(Collision other)
     {
 
 
@@ -46,6 +56,10 @@ public class Movement : MonoBehaviour
 
 
     }
+  
+
+
+
 
 
 }
