@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
 
     public float speed;
@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -23,18 +23,18 @@ public class Movement : MonoBehaviour
     {
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.forward * speed* Time.deltaTime* verticalInput);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime * verticalInput);
         // (x,y,z)
 
         transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime * horizontalInput);
 
         if (Input.GetKey(KeyCode.Space) && CompareTag("Floor"))
         {
-            transform.Translate(Vector3.up*jumpdis*Time.deltaTime);
+            transform.Translate(Vector3.up * jumpdis * Time.deltaTime);
         }
     }
 
-   private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision other)
     {
 
 
@@ -42,7 +42,7 @@ public class Movement : MonoBehaviour
         {
             Debug.Log("Colliding with Floor");
         }
-        else if(other.gameObject.CompareTag("Obstacle")) //secondary c:
+        else if (other.gameObject.CompareTag("Obstacle")) //secondary c:
         {
             Debug.Log("Colliding with Obstacle");
         }
@@ -50,21 +50,5 @@ public class Movement : MonoBehaviour
         {
             Debug.Log("...");
         }
-
-        
-
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Trigger activated");
-
-
-    }
-  
-
-
-
-
-
 }
