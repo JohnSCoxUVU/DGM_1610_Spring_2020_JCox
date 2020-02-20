@@ -5,7 +5,7 @@ using UnityEngine;
 public class AmmoBarAttempt : MonoBehaviour
 {
     public int ammo = 30;
-    public Text uitext;
+    public TextAsset uitext;
     private bool isAttacking = false;
     public float delay = 0.1f;
 
@@ -27,12 +27,12 @@ public class AmmoBarAttempt : MonoBehaviour
         }
         isAttacking = true;
         ammo -= 1;
-        if (uitext != null)
-        {
+       /* if (uitext != null)
+        { 
             uitext.text = ammo.ToString();
         }
         yield return new WaitForSeconds(delay);
-        isAttacking = false;
+        isAttacking = false; /* \* */
     }
 }
 

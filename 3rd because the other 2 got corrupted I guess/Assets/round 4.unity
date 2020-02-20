@@ -955,7 +955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebda59a2e46f4194abe429482073f149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 2
   verticalInput: 1
   horizontalInput: 1
   turnSpeed: 150
@@ -1199,8 +1199,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5071cca848e0c49ad03ff9e2131b4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   target: {fileID: 921097291}
   moveSpeed: 100
+  damage: 10
 --- !u!1 &1336073951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,7 +1661,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 1312837374}
-  enemyIndex: 0
+  - {fileID: 1312837374}
+  - {fileID: 1312837374}
+  enemyIndex: 2
 --- !u!4 &1845015268
 Transform:
   m_ObjectHideFlags: 0

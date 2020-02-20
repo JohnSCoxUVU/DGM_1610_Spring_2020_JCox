@@ -13,7 +13,7 @@ public class ExampleScriptNotMyCode : MonoBehaviour
     public float Shots, Ammoleft, full, ShotsFired, StartAmmount;
     public AudioSource GunShot, Reload;
     public Animator Anim;
-    public Text In, Left;
+    public TextAreaAttribute In, Left;
     public bool Running, Reloading;
     void Start()
     {
@@ -63,8 +63,8 @@ public class ExampleScriptNotMyCode : MonoBehaviour
         {
             Ammoleft = 0;
         }
-        AmmoLeftIn();
-        LeftInClip();
+        /*AmmoLeftIn();
+        LeftInClip(); */
     }
     void Fire()
     {
@@ -107,7 +107,7 @@ public class ExampleScriptNotMyCode : MonoBehaviour
         ShotsFired = 0; //return the remainder to 0
         Reloading = false;
     }
-
+    /*
     void LeftInClip()
     {
         Left.text = "" + Shots.ToString();
@@ -115,6 +115,7 @@ public class ExampleScriptNotMyCode : MonoBehaviour
     void AmmoLeftIn()
     {
         In.text = "" + Ammoleft.ToString();
-    }
+    } 
+    /* \* */ 
 }﻿
 
