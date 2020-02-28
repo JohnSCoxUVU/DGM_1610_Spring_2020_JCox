@@ -2,29 +2,56 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class healthPickup : Pickup
+public class HealthBar : MonoBehaviour
 {
 
-    public int healthAmt = 100;
+
+    public int maxHealth = 100;
+    public int curHealth = 100;
 
 
-    // Start is called before the first frame update
+
+    public float healthBarLength;
+
+
+    // Use this for initialization
     void Start()
     {
-        
+
+        healthBarLength = Screen.width / 2;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+        AddjustCurrentHealth(0);
+
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnGUI()
     {
-        print("You gained " + healthAmt + " health!");
+
+        GUI.Box(new Rect(10, 10, healthBarLength, 20), curHealth + "/" + maxHealth);
+
     }
 
+    public void AddjustCurrentHealth(int adj)
+    {
 
+        curHealth += adj;
+
+        if (curHealth < 0)
+            curHealth = 0;
+
+        if (curHealth > maxHealth)
+            curHealth = maxHealth;
+
+        if (maxHealth < 1)
+            maxHealth = 1;
+
+
+        healthBarLength = (Screen.width / 2) * (curHealth / (float)maxHealth);
+    }
 }
