@@ -9,13 +9,18 @@ public class Movement : MonoBehaviour
     public float verticalInput;
     public float horizontalInput;
     public float turnSpeed;
-    public float jumpdis;
+    public float jumpHeight;
+    public bool isGrounded;
+
+    private Rigidbody rb;
+    public GameObject projectilePrefab;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -28,18 +33,24 @@ public class Movement : MonoBehaviour
 
         transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime * horizontalInput);
 
-        if (Input.GetKey(KeyCode.Space) && CompareTag("Floor"))
+       
+    }
+
+    private void FixedUpdate()
+    {
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            transform.Translate(Vector3.up*jumpdis*Time.deltaTime);
+            rb.AddForce(Vector3.up * jumpHeight * 1000);
         }
     }
 
-   private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision other)
     {
 
 
         if (other.gameObject.CompareTag("Floor")) //primary 
         {
+            isGrounded = true;
             Debug.Log("Colliding with Floor");
         }
         else if(other.gameObject.CompareTag("Obstacle")) //secondary c:
@@ -51,7 +62,18 @@ public class Movement : MonoBehaviour
             Debug.Log("...");
         }
 
+    
         
+
+    }
+
+    private void OnCollisionExit(Collision Other)
+    {
+        if (Other.gameObject.CompareTag("Floor") || Other.gameObject.CompareTag("Obstacle"))
+            {
+            isGrounded = false;
+            Debug.Log("Not touching the ground!");
+        }
 
     }
 

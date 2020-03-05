@@ -26,7 +26,7 @@ public class HealthBar : MonoBehaviour
     void Update()
     {
 
-        AddjustCurrentHealth(0);
+        AdjustCurrentHealth(0);
 
     }
 
@@ -37,7 +37,7 @@ public class HealthBar : MonoBehaviour
 
     }
 
-    public void AddjustCurrentHealth(int adj)
+    public void AdjustCurrentHealth(int adj)
     {
 
         curHealth += adj;
