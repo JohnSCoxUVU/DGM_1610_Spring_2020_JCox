@@ -19,7 +19,7 @@ public class Flashlight : MonoBehaviour
     void Start()
     {
         currentBattery = maxBattery;
-        maxBattery = 50 * batteries;
+        currentBattery = 50 * batteries;
     }
 
     // Update is called once per frame
@@ -41,27 +41,6 @@ public class Flashlight : MonoBehaviour
         {
 
             flashlight.SetActive(true);
-            
-
-            if(currentBattery <= 0)
-            {
-                lightObj.SetActive(false);
-                batteries = 0;
-            }
-            if(currentBattery > 0)
-            {
-                lightObj.SetActive(true);
-                currentBattery -= 0.2f * Time.deltaTime;
-                usedEnergy += 0.5f * Time.deltaTime;
-            }
-
-            if (usedEnergy >= 50)
-            {
-                batteries -= 1;
-                usedEnergy = 0;
-            }
-
-
         }
 
         else { 
