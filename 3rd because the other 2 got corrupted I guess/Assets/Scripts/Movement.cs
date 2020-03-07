@@ -24,24 +24,36 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.forward * speed* Time.deltaTime* verticalInput);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime * verticalInput);
         // (x,y,z)
 
         transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime * horizontalInput);
 
        
-    }
-
-    private void FixedUpdate()
-    {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.AddForce(Vector3.up * jumpHeight * 1000);
         }
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                speed = 30;
+            }
+            else
+            {
+                speed = 15;
+            }
+            gameObject.transform.position += Vector3.forward * speed * Time.deltaTime;
+        }
+
+
     }
 
     private void OnCollisionEnter(Collision other)
