@@ -18,12 +18,13 @@ public class Flashlight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxBattery = 100;
         currentBattery = maxBattery;
         currentBattery = 50 * batteries;
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         maxBattery = 50 * batteries;
         currentBattery = maxBattery;
@@ -32,31 +33,33 @@ public class Flashlight : MonoBehaviour
 
 
         //equip 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && (flashlightEnabled = false)) 
         {
-            flashlightEnabled =! flashlightEnabled;
-        }
-
-        if (flashlightEnabled)
-        {
-
+            // flashlightEnabled =! flashlightEnabled;\
+            flashlightEnabled = true;
             flashlight.SetActive(true);
         }
 
-        else { 
+        if (Input.GetKeyDown(KeyCode.F) && (flashlightEnabled = true))
+        {
+            flashlightEnabled = false;
             flashlight.SetActive(false);
-             }
         }
 
-    public void OnTriggerEnter(Collider other)
+       // else { 
+         //   flashlight.SetActive(false);
+             //}
+        }
+
+   /*  public void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Battery")
         {
             batteryPickedUp = other.gameObject;
             batteries += 1;
             Destroy(batteryPickedUp);
-        }
-    }
+        } 
+    } */
 
 
 }

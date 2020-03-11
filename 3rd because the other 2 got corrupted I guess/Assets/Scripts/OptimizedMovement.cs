@@ -32,7 +32,7 @@ public class OptimizedMovement : MonoBehaviour
         //controller.SimpleMove(motion);
 
         //jump
-        if (Input.GetKeyDown(KeyCode.Space) & controller.isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && controller.isGrounded)
         {
             motion.y = jumpforce;
         }
