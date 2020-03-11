@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime * verticalInput);
         // (x,y,z)
 
-        transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime * horizontalInput);
+        transform.Translate(Vector3.right * turnSpeed * Time.deltaTime * horizontalInput);
 
        
         if (Input.GetButtonDown("Jump") && isGrounded)
