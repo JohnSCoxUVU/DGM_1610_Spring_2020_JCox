@@ -50,6 +50,9 @@ public class FPMovement : MonoBehaviour
 
         }
 
+
+
+
         void OnCollisionEnter(Collision other)
         {
 
