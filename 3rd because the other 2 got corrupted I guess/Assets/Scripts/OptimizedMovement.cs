@@ -6,27 +6,30 @@ public class OptimizedMovement : MonoBehaviour
 {
     public CharacterController controller;
    
-    public float speed = 12f;
+    public float speed = 10f;
     public float gravity = -9.81f;
-    public float jumpforce = 10.0f;
-    private Vector3 motion = Vector3.zero;
+    public float jumpForce = 10.0f;
+    
+
+    void Start()
+    {
+        controller = GetComponent<CharacterController>();
+    }
 
 
     // Update is called once per frame
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        float deltaX = Input.GetAxis("Horizontal");
+        float deltaZ = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x + transform.forward * z;
+        Vector3 move = transform.right * deltaX + transform.forward * deltaZ;
         controller.Move(move * speed * Time.deltaTime);
 
-                 }
-    void Move()
-    {
-        motion = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        motion *= speed;
-        motion = transform.TransformDirection(motion);
+        Vector3 motion = new Vector3(deltaX, 0, deltaZ);
+        motion = Vector3.ClampMagnitude(motion, speed);
+
+        motion.y = gravity;
 
         controller.Move(motion);
         //controller.SimpleMove(motion);
@@ -34,7 +37,7 @@ public class OptimizedMovement : MonoBehaviour
         //jump
         if (Input.GetKeyDown(KeyCode.Space) && controller.isGrounded)
         {
-            motion.y = jumpforce;
+            transform.Translate(Vector3.up * jumpForce * Time.deltaTime);
         }
 
         motion.y -= gravity * Time.deltaTime;
