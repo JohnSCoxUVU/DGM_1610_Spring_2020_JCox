@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallJump : MonoBehaviour
+public class walljump : MonoBehaviour
 {
     public float speed = 6.0f;
     public float airSpeed = 3.0f;
