@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac3875bc79ca2a469a842e92538899d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
+  mouseSensitivity: 1000
   playerBody: {fileID: 529018626324392452}
 --- !u!1 &529018626324392454
 GameObject:
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 529018626324392450}
   - component: {fileID: 529018626324392451}
   m_Layer: 0
-  m_Name: Player
+  m_Name: First-Person Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,7 +143,7 @@ CharacterController:
   m_GameObject: {fileID: 529018626324392454}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Height: 3.8
   m_Radius: 0.6
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529018626324392454}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b601ee041b75c84f86bdc2d8934f3d4, type: 3}
   m_Name: 
@@ -167,7 +167,7 @@ MonoBehaviour:
   controller: {fileID: 529018626324392455}
   speed: 12
   gravity: -9.81
-  jumpforce: 10
+  jumpForce: 10
 --- !u!114 &529018626324392450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebda59a2e46f4194abe429482073f149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 0
   verticalInput: 0
   horizontalInput: 0
   turnSpeed: 0
@@ -230,7 +230,7 @@ Transform:
   m_GameObject: {fileID: 529018626815003492}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.009999752, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.8, z: 1.2}
+  m_LocalScale: {x: 1.2, y: 1.8000001, z: 1.2}
   m_Children: []
   m_Father: {fileID: 529018626324392452}
   m_RootOrder: 1
@@ -257,6 +257,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -268,6 +269,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
