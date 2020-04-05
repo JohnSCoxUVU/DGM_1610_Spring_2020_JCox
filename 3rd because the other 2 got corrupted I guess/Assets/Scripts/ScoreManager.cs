@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
     public int winScore;
 
     public Text winText;
-    Text scoreText;
+    public Text scoreText;
 
 
     private void Awake()
