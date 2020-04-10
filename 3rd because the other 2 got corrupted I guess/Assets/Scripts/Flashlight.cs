@@ -18,16 +18,16 @@ public class Flashlight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxBattery = 100;
-        currentBattery = maxBattery;
-        currentBattery = 50 * batteries;
+        /* maxBattery = 100;
+         currentBattery = maxBattery;
+        currentBattery = 50 * batteries; */
     }
 
     // Update is called once per frame
     void Update()
     {
-        maxBattery = 50 * batteries;
-        currentBattery = maxBattery;
+        /* maxBattery = 50 * batteries;
+        currentBattery = maxBattery; */
 
 
 
