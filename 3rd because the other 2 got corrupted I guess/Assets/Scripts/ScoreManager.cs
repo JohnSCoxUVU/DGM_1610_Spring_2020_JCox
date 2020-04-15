@@ -34,9 +34,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (score < 0) 
             score = 0;
-      
-
-            scoreText.text = "score";
+     
 
         if(score >= winScore)
         {
