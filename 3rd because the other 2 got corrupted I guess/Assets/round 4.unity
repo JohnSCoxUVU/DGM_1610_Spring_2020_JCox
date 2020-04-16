@@ -258,8 +258,8 @@ GameObject:
   - component: {fileID: 229359593}
   - component: {fileID: 229359592}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -631,13 +631,13 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 100
-  m_Range: 30
+  m_Intensity: 10
+  m_Range: 40
   m_SpotAngle: 45
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -963,7 +963,7 @@ GameObject:
   - component: {fileID: 720436619}
   - component: {fileID: 720436618}
   m_Layer: 5
-  m_Name: Scoretext
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -985,7 +985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -490, y: -249}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &720436618
@@ -1228,7 +1228,7 @@ PrefabInstance:
     - target: {fileID: 1573878531814158680, guid: e5cdcf0a23b7b47438512332cdfef698,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.1
+      value: 27.2
       objectReference: {fileID: 0}
     - target: {fileID: 1573878531814158680, guid: e5cdcf0a23b7b47438512332cdfef698,
         type: 3}
@@ -1238,7 +1238,7 @@ PrefabInstance:
     - target: {fileID: 1573878531814158680, guid: e5cdcf0a23b7b47438512332cdfef698,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -33.8
+      value: -31.6
       objectReference: {fileID: 0}
     - target: {fileID: 1573878531814158680, guid: e5cdcf0a23b7b47438512332cdfef698,
         type: 3}
@@ -1623,7 +1623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -495, y: -252.3}
+  m_AnchoredPosition: {x: 72, y: 53.9}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1054542732
