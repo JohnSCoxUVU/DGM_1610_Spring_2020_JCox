@@ -607,7 +607,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492934868}
   m_LocalRotation: {x: -0.0037321416, y: -0.000000029802319, z: -1.1641531e-10, w: 0.999993}
-  m_LocalPosition: {x: -0, y: -19, z: -2474}
+  m_LocalPosition: {x: -0, y: -0.052, z: -0.059}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2078541297}
@@ -627,7 +627,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 3
   m_Range: 120
-  m_SpotAngle: 50
+  m_SpotAngle: 60
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -1552,7 +1552,7 @@ PrefabInstance:
     - target: {fileID: 1573878531814158680, guid: e5cdcf0a23b7b47438512332cdfef698,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -31.6
+      value: -1148.4
       objectReference: {fileID: 0}
     - target: {fileID: 1573878531814158680, guid: e5cdcf0a23b7b47438512332cdfef698,
         type: 3}
@@ -1730,6 +1730,7 @@ GameObject:
   - component: {fileID: 899703264}
   - component: {fileID: 899703263}
   - component: {fileID: 899703265}
+  - component: {fileID: 899703266}
   m_Layer: 0
   m_Name: Pwayer
   m_TagString: Player
@@ -1763,7 +1764,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899703262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.898, y: 1.393, z: -1467}
+  m_LocalPosition: {x: 3.898, y: 1.393, z: -1472}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2078541297}
@@ -1784,6 +1785,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 12
+--- !u!65 &899703266
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899703262}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 141, y: 53.87152, z: 141}
+  m_Center: {x: 3.2929459, y: 26.435753, z: 13.407471}
 --- !u!1001 &906126037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1960,7 +1974,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907529142}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.838, y: 0.16, z: 0.591}
+  m_LocalPosition: {x: 0.83800006, y: 0.15999997, z: 0.5909424}
   m_LocalScale: {x: 0.19191356, y: 0.17169932, z: 0.846165}
   m_Children:
   - {fileID: 857667569}
@@ -3637,7 +3651,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078541296}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
