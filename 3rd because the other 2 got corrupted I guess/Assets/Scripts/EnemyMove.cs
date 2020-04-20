@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
         // public Transform target;
-    public float moveSpeed;
+    public float moveSpeed = 5;
     private Rigidbody enemyRb;
     public GameObject player;
 
@@ -14,13 +14,13 @@ public class EnemyMove : MonoBehaviour
     {
         // target = GameObject.Find("Player").transform;
         enemyRb = GetComponent<Rigidbody>();
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Pwayer");
     }
 
     // Update is called once per frame
     void Update()
     {
-       // transform.LookAt(target);
+      //transform.LookAt("Pwayer");
         //transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
 
 
