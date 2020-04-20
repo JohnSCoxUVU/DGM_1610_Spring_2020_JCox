@@ -1731,6 +1731,7 @@ GameObject:
   - component: {fileID: 899703263}
   - component: {fileID: 899703265}
   - component: {fileID: 899703266}
+  - component: {fileID: 899703267}
   m_Layer: 0
   m_Name: Pwayer
   m_TagString: Player
@@ -1785,6 +1786,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 12
+  walkSpeed: 5
+  runSpeed: 10
 --- !u!65 &899703266
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1798,6 +1801,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 141, y: 53.87152, z: 141}
   m_Center: {x: 3.2929459, y: 26.435753, z: 13.407471}
+--- !u!114 &899703267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899703262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52d362beaf9b874b98475cb863f0c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &906126037
 PrefabInstance:
   m_ObjectHideFlags: 0
