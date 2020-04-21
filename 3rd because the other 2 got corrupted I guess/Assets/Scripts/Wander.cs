@@ -6,6 +6,9 @@ using UnityEngine.AI;
 public class Wander : MonoBehaviour
 {
 
+
+    private float distance;
+
     public float wanderRadius;
     public float wanderTimer;
 
@@ -18,6 +21,10 @@ public class Wander : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         timer = wanderTimer;
+    }
+    private void Start()
+    {
+        distance = Vector3.Distance(target.position, transform.position);
     }
 
     void Update()
