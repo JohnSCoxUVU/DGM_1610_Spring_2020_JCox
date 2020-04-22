@@ -51,7 +51,7 @@ public class ScoreManager : MonoBehaviour
     public static void AddPoints(int pointsToAdd)
     {
         score += pointsToAdd;
-        Debug.Log("Game Score : " + score);
+        Debug.Log("Relics Collected: " + score);
     }
 
 

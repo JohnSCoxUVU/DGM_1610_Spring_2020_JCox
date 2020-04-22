@@ -25,7 +25,6 @@ public class walljump : MonoBehaviour
     }
     void Update()
     {
-
         CharacterController controller = GetComponent<CharacterController>();
         moveDirection = new Vector3(Input.GetAxis("Horizontal"), moveDirection.y, Input.GetAxis("Vertical"));
         moveDirection = transform.TransformDirection(moveDirection);
