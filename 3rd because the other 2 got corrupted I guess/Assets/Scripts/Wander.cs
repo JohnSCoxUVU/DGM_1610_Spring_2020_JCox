@@ -36,9 +36,6 @@ public class Wander : MonoBehaviour
             Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
             agent.SetDestination(newPos);
             timer = 0;
-
-
-
         }
     }
 

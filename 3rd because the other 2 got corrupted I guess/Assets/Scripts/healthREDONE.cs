@@ -12,10 +12,15 @@ public class healthREDONE : MonoBehaviour
 
     public Text gameOver;
 
+    private CharacterController controller;
+
+
+
     // Use this for initialization
     void Start()
     {
         curHealth = 100;
+        gameOver.GetComponent<Text>().enabled = false;
 
         healthBarLength = Screen.width / 2;
     }
@@ -42,7 +47,6 @@ public class healthREDONE : MonoBehaviour
             print("You are dead!");
             gameOver.GetComponent<Text>().enabled = true;
             Time.timeScale = 0;
-
         }
 
         if (curHealth > maxHealth)
@@ -57,18 +61,22 @@ public class healthREDONE : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
+
         if (other.gameObject.CompareTag("Health"))
         {
             curHealth = 100;
             Destroy(other.gameObject);
         }
+        // used for health pickups
+
 
         if (other.gameObject.CompareTag("Enemy")) 
         {
             curHealth -= 25;
 
         }
-
+        //used for Enemy Damage
 
     }
 
