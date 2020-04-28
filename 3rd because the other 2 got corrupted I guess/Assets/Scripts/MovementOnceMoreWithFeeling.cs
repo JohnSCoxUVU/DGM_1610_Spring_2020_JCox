@@ -7,12 +7,26 @@ public class MovementOnceMoreWithFeeling : MonoBehaviour
 {
     private CharacterController charController;
     [SerializeField] private float movementSpeed;
+    
+    bool isRunning;
+    
+    public float stamina;
+        float maxStamina = 10;
+    
+    Rect staminaRect;
+    Texture staminaTexture;
+    //Stamina Bar
 
 
     // Start is called before the first frame update
     void Start()
     {
-        movementSpeed = 40;    
+        movementSpeed = 40;
+        stamina = maxStamina;
+        SetRunning(false);
+
+        staminaRect = new Rect(Screen.width / 10, Screen.height * 9 / 10, Screen.width / 3, Screen.height / 50);
+        staminaTexture = new Texture2D(1, 1);
     }
 
 
@@ -28,14 +42,31 @@ public class MovementOnceMoreWithFeeling : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            movementSpeed = 70;
-
+            SetRunning(true);
+            
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             movementSpeed = 40;
+            SetRunning(false);
+            stamina += Time.deltaTime;
         }
-       
+
+        if (isRunning)
+        {
+            movementSpeed = 70;
+            stamina -= Time.deltaTime;
+            if (stamina < 0)
+            {
+                stamina = 0;
+                SetRunning(false);
+            }
+        } else if (stamina < maxStamina)
+        {
+            stamina += Time.deltaTime;
+            movementSpeed = 40;
+        }
+           
 
     }
 
@@ -51,7 +82,20 @@ public class MovementOnceMoreWithFeeling : MonoBehaviour
         //Time.deltatime not necessary, simplemove does so automatically
     }
 
+    void SetRunning(bool isRunning)
+    {
+        this.isRunning = isRunning;
+        //Equalizes the declared bool and the function.
 
+    }
 
+    private void OnGUI()
+    {
+        float ratio = stamina / maxStamina;
+        float rectWidth = ratio * Screen.width / 3;
+        staminaRect.width = rectWidth;
+        GUI.DrawTexture(staminaRect, staminaTexture);
+
+    }
 
 }

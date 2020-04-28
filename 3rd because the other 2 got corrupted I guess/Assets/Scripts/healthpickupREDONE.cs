@@ -4,37 +4,26 @@ using UnityEngine;
 
 public class healthpickupREDONE : MonoBehaviour
 {
-
-
     public int maxHealth = 100;
     public int curHealth = 100;
 
-
-
     public float healthBarLength;
-
 
     // Use this for initialization
     void Start()
     {
-
         healthBarLength = Screen.width / 2;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
         AdjustCurrentHealth(0);
-
     }
 
     void OnGUI()
     {
-
         GUI.Box(new Rect(10, 10, healthBarLength, 20), curHealth + "/" + maxHealth);
-
     }
 
     public void AdjustCurrentHealth(int adj)
@@ -54,5 +43,15 @@ public class healthpickupREDONE : MonoBehaviour
 
         healthBarLength = (Screen.width / 2) * (curHealth / (float)maxHealth);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Health"))
+        {
+            curHealth = 100;
+            Destroy(other.gameObject);
+        }
+    }
+
 }
 
