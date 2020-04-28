@@ -7,21 +7,21 @@ public class EnemyMove : MonoBehaviour
         // public Transform target;
     public float moveSpeed = 5;
     private Rigidbody enemyRb;
-    public GameObject player;
+    public Transform player;
 
     // Start is called before the first frame update
     void Start()
     {
         // target = GameObject.Find("Player").transform;
         enemyRb = GetComponent<Rigidbody>();
-        player = GameObject.Find("Pwayer");
+
     }
 
     // Update is called once per frame
     void Update()
     {
-      //transform.LookAt("Pwayer");
-        //transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+      transform.LookAt(player);
+        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
 
 
     }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
-public class NavAgentBehaviour : MonoBehaviour
+public class AIpatrol : MonoBehaviour
 {
     private NavMeshAgent agent;
     public Transform player;
